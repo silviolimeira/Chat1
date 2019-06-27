@@ -1,0 +1,152 @@
+
+Create the sample application:
+$ ionic start todo-service blank --package-id=io.sicemal.todo.service --type angular --cordova --no-link
+
+$ npm install --save ng-socket-io rxjs-compat socket.io-client 
+
+
+Support for android or IOS:
+$ ionic cordova platform add android --save;
+$ ionic cordova platform add ios --save
+
+Executing in android
+set ANDROID_SDK_ROOT=D:\Users\silvio.limeira\AppData\Local\Android\Sdk
+set ANDROID_HOME=D:\Users\silvio.limeira\AppData\Local\Android\Sdk
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_181\bin
+
+export ANDROID_SDK_ROOT=/d/Users/silvio.limeira/AppData/Local/Android/Sdk
+export ANDROID_HOME=/d/Users/silvio.limeira/AppData/Local/Android/Sdk
+export JAVA_HOME=/c/Program\ Files/Java/jdk1.8.0_181
+
+echo $ANDROID_SDK_ROOT
+echo $ANDROID_HOME
+echo $JAVA_HOME
+
+$ ionic cordova build android --prod --release
+or
+$ ionic cordova run android --prod --release
+
+$ adb install /d/projetos/2019/ionic/Todo-service/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+
+
+Build the App for Production
+$ ng build --env=prod
+
+Run the App
+$ ionic -c serve --browser=chrome --port=8100
+
+   The two components are added to the module components that are created using
+the following command. The option --flat false means generating a separate
+directory for the module.
+$ ionic g module components --flat false
+
+Generate Item Component
+$ ionic g component components/item --flat false
+
+Generate Pipe TimeAgo
+$ ng g pipe components/TimeAgo --flat false
+
+Install moment
+$ npm install moment
+
+Generate Items Component
+$ ionic g component components/items --flat false
+
+Debugging of unit tests easier:
+$ ionic test --source-map=false
+
+Install ng-socket-io
+$ npm install  --save ng-socket-io rxjs-compat socket.io-client 
+
+Generating services module
+$ ionic g module services --flat false
+   after create we need to modify file app.module.ts to add the impport
+of the created ServicesModule.
+
+Generating service item
+$ ngg module services --flat false
+$ ionic g service services/item -m services --flat false
+
+Generating Top Stories page 
+$ ionic g module top-stories --routing
+$ ionic g component top-stories -m top-stories
+
+Generate pipe:
+ionic g pipe components/totalEnrolleds --flat false
+
+Generate Items Loading Service Mock
+$ touch src/app/services/item/item.service.mock.ts
+Install lodash.range
+$ npm i lodash.range
+
+Create a production build:
+http://masteringionic.com/blog/2019-02-03-creating-a-progressive-web-app-in-ionic-4/
+$ ionic start ionic-app-pwa blank --type=angular
+$ ng add @angular/pwa --project app
+$ npm install @types/cordova --save
+$ ionic build --prod
+
+
+# Iniciando o mongodb no modo replica set 
+# https://blog.usejournal.com/using-mongodb-as-realtime-db-with-nodejs-c6f52c266750
+$ mongod --port 27017 --replSet rs0
+# verificando o funcionamento no cliente mongo
+$ mongo
+$ rs.initiate()
+
+# Criando a capped colletion:
+$ db.createCollection("messages",{capped:true,size:10000})
+ 
+# Inserindo um registro
+$ db.messages.insert({ type: 1, message: "Teste"})
+
+# Listando registros
+$ db.cappedCollection.find().sort( { $natural: -1 } )
+
+# https://pusher.com/tutorials/mongodb-change-streams
+
+
+## Change Streams With mongodb
+https://dzone.com/articles/change-streams-with-mongodb
+
+
+#===Research Push Notifications
+
+ https://medium.com/hirewithparam/independent-notification-service-using-ionic-node-fcm-5cdde219480a
+
+ https://www.airpair.com/ionic-framework/posts/push-notifications-using-ionic-framework
+
+ https://www.joshmorony.com/sending-push-notifications-with-the-phonegap-push-plugin-in-capacitor/
+
+ https://ionicacademy.com/ionic-4-local-notifications/
+  https://ionicframework.com/docs/native/local-notifications
+
+
+https://devdactic.com/ionic-realtime-socket-io/
+
+https://www.techiediaries.com/ionic-http/
+
+
+
+####################################################################################
+
+Ionic:
+
+   ionic (Ionic CLI)             : 4.6.0 (C:\Users\limeira\AppData\Roaming\npm\node_modules\ionic)   
+   Ionic Framework               : @ionic/angular 4.5.0
+   @angular-devkit/build-angular : 0.13.9
+   @angular-devkit/schematics    : 7.3.9
+   @angular/cli                  : 7.3.9
+   @ionic/angular-toolkit        : 1.5.1
+
+Cordova:
+
+   cordova (Cordova CLI) : 8.1.2 (cordova-lib@8.1.1)
+   Cordova Platforms     : not available
+   Cordova Plugins       : not available
+
+System:
+
+   NodeJS : v10.15.3 (C:\nodejs\node.exe)
+   npm    : 6.4.1
+   OS     : Windows 10

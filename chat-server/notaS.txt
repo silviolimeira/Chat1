@@ -1,0 +1,10 @@
+
+Server App
+
+$ mkdir chat-server
+cd chat-server
+
+npm init -y
+
+npm install socket.io --save
+

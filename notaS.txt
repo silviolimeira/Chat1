@@ -1,0 +1,8 @@
+
+Create a front end application
+$ ionic start chat-client blank
+cd chat-client
+
+$ npm install socket.io-client --save
+
+
